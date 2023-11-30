@@ -1,3 +1,37 @@
 /* 
     General Styles
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap');
+
+body {
+    background-image: url("https://cdn.pixabay.com/photo/2021/10/21/20/38/galaxy-6730398_1280.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: 'Roboto Slab', serif;
+}
+/* Estilo de la barra de desplazamiento */
+::-webkit-scrollbar {
+    margin-top: 10px;
+    padding-top: 10px;
+    width: 15px;
+}
+
+/* Estilo de la manija de la barra de desplazamiento */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(white, #00ff4c, #00ff4c, #00c93a, white); /* Gradiente de verde a un tono más oscuro (horizontal) */
+    border-left: 100px solid; /* Ancho del borde izquierdo */
+    border-image: linear-gradient(to bottom, gray, black, grey); /* Gradiente vertical de gris a negro */
+    border-image-slice: 1; /* Utiliza el gradiente en toda la anchura del borde izquierdo */
+    border-radius: 15px;
+}
+::-webkit-scrollbar-track {
+    background-color: rgba(220, 220, 220, 0.397); /* Color de fondo gris del margen */
+}
+
+
+.bg-gra {
+    background: linear-gradient(230deg, black, transparent);
+  }
+  
