@@ -34,4 +34,10 @@ body {
 .bg-gra {
     background: linear-gradient(230deg, black, transparent);
   }
+.nave {
+    background: linear-gradient(180deg, black, black, white,black, transparent);
+}
+
+  
+  
   

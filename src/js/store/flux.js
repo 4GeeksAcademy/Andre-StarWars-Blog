@@ -2,7 +2,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			people: [],
-			
+			favorites: [],
+			currentPage: 1
 		},
 		actions: {
 			getPeopleData: () => {
@@ -33,6 +34,38 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log(error);
 				});
 			},
+			setCurrentPage: page => {
+				const store = getStore();
+				setStore({ currentPage: page });
+			},
+			getPeopleData1: () => {
+				//get the store
+				const store = getStore();
+				
+				fetch("https://www.swapi.tech/api/people?page=2&limit=10").then(resp => resp.json())
+				.then(data => {
+					setStore({people: data.results})
+				})
+
+				.then(console.log)
+
+				.catch(error => {
+					console.log(error);
+				});
+			},
+			addFavorite: (item) => {
+				const store = getStore();
+                const favorite = store.favorites.concat(item);
+                setStore({ favorites: favorite });
+			},
+
+			deleteFavorite: (index) => {
+				const store = getStore();
+                const favorite = store.favorites.filter((_c, i) => {
+                    return index !== i
+                });
+                setStore({ favorites: favorite });
+			}
 		}
 	};
 };

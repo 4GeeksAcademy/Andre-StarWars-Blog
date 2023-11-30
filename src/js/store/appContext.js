@@ -23,6 +23,7 @@ const injectContext = PassedComponent => {
 
 		useEffect(() => {
 			state.actions.getPeopleData();
+			state.actions.getPeopleData1();
 			
 		}, []);
 

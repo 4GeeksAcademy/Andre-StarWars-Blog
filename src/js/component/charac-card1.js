@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
 
-export const CharacterCard = (props) => {
+export const CharacterCard1 = (props) => {
 	const { store, actions } = useContext(Context);
 	const [active, setActive] = useState(false);
 
@@ -33,10 +33,7 @@ export const CharacterCard = (props) => {
 	);
 };
 
-CharacterCard.propTypes = {
+CharacterCard1.propTypes = {
 	name: PropTypes.string.isRequired,
 	index: PropTypes.number.isRequired,
 };
-
-
-

@@ -37,7 +37,7 @@ export const CharDetails = () => {
                             src={`https://starwars-visualguide.com/assets/img/characters/${param.result.uid}.jpg`}
                             alt="Placeholder Image"
                         />
-                        <div className="m-5 text-white text-description">
+                        <div className="m-5 text-white">
                             <h1 className="fs-2">{param.result.properties.name}</h1>
                             <p className="fs-5 description-paragraph">{param.result.description}</p>
                         </div>
