@@ -53,6 +53,36 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log(error);
 				});
 			},
+			getPeopleData2: () => {
+				//get the store
+				const store = getStore();
+				
+				fetch("https://www.swapi.tech/api/people?page=3&limit=10").then(resp => resp.json())
+				.then(data => {
+					setStore({people: data.results})
+				})
+
+				.then(console.log)
+
+				.catch(error => {
+					console.log(error);
+				});
+			},
+			getPeopleData3: () => {
+				//get the store
+				const store = getStore();
+				
+				fetch("https://www.swapi.tech/api/people?page=4&limit=10").then(resp => resp.json())
+				.then(data => {
+					setStore({people: data.results})
+				})
+
+				.then(console.log)
+
+				.catch(error => {
+					console.log(error);
+				});
+			},
 			addFavorite: (item) => {
 				const store = getStore();
                 const favorite = store.favorites.concat(item);

@@ -30,10 +30,19 @@ export const Home = (props) => {
   const getRandomColor = () => {
     return "#" + Math.floor(Math.random() * 16777215).toString(16);
   };
-
+// Manejar el cambio de página
+const handlePageChange0 = () => {
+  actions.getPeopleData();
+};
   // Manejar el cambio de página
   const handlePageChange = () => {
     actions.getPeopleData1();
+  };
+  const handlePageChange1 = () => {
+    actions.getPeopleData2();
+  };
+  const handlePageChange2 = () => {
+    actions.getPeopleData3();
   };
 
   return (
@@ -50,8 +59,17 @@ export const Home = (props) => {
             ))}
           </div>
         </div>
-        <button onClick={handlePageChange} className="btn btn-primary mt-3">
-          Load More
+        <button onClick={handlePageChange0} className="btn btn-outline-success border-3 m-3">
+          Page 1
+        </button>
+        <button onClick={handlePageChange} className="btn btn-outline-success border-3 m-3">
+          Page 2
+        </button>
+        <button onClick={handlePageChange1} className="btn btn-outline-success border-3 m-3">
+          Page 3
+        </button>
+        <button onClick={handlePageChange2} className="btn btn-outline-success border-3 m-3">
+          Page 4
         </button>
       </div>
     </div>

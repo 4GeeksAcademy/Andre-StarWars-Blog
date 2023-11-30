@@ -5,20 +5,12 @@ import { Context } from "../store/appContext";
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
 
-	const handleGoHome = () => {
-		actions.setCurrentPage(1);
-	  };
 	return (
 		<nav className="nave navbar mb-3 mt-3 justify-content-evenly">
 			<Link to="/">
 				<img className="w-25" src="https://lumiere-a.akamaihd.net/v1/images/sw_logo_stacked_2x-52b4f6d33087_7ef430af.png?region=0,0,586,254" />
 				<button className="ms-2 btn btn-outline-success border-3">Home</button>
 			</Link>
-			<div className="ml-auto">
-				<Link  className="navbar-brand" to="/Home" onClick={handleGoHome}>
-					<button className="btn btn-outline-success border-3">See Favorites</button>
-				</Link>
-			</div>
 			<div className="dropdown">
     			<button className="btn btn-outline-success border-3 dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
         		Favorites

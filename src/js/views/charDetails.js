@@ -40,6 +40,10 @@ export const CharDetails = () => {
                         <div className="m-5 text-white">
                             <h1 className="fs-2">{param.result.properties.name}</h1>
                             <p className="fs-5 description-paragraph">{param.result.description}</p>
+                        <video width="300" height="200" controls>
+                        <source src={`../img/Star Wars Intro HD 1080p.mp4`} type="video/mp4" />
+                        Tu navegador no soporta el tag de video.
+                        </video>
                         </div>
                     </div>
                     <div className="d-flex text-white justify-content-around m-3 fs-5 border-5 border-success border">
