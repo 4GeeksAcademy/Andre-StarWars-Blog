@@ -40,7 +40,7 @@ export const CharDetails = () => {
                         <div className="m-5 text-white">
                             <h1 className="fs-2">{param.result.properties.name}</h1>
                             <p className="fs-5 description-paragraph">{param.result.description}</p>
-                        <video width="500" height="300"controls autoPlay>
+                        <video width="500" height="300"controls volume={0.5} autoPlay >
                         <source src={`https://github.com/4GeeksAcademy/Andre-StarWars-Blog/raw/master/src/img/Star%20Wars%20Intro%20HD%201080p.mp4`} type="video/mp4" />
                         Tu navegador no soporta el tag de video.
                         </video>

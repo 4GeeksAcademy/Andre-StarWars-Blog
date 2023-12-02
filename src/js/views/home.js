@@ -8,7 +8,7 @@ export const Home = (props) => {
   const { store, actions } = useContext(Context);
 
   // Estado para almacenar el color del título que cambia
-  const [titleColor, setTitleColor] = useState("white");
+  const [titleColor, setTitleColor] = useState("red");
 
   // Efecto para cambiar el color del título cada 5 segundos
   useEffect(() => {
