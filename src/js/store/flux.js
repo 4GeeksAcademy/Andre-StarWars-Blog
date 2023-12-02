@@ -3,6 +3,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			people: [],
 			favorites: [],
+			planets: [],
+			vehicles: [],
 			currentPage: 1
 		},
 		actions: {
@@ -95,7 +97,61 @@ const getState = ({ getStore, getActions, setStore }) => {
                     return index !== i
                 });
                 setStore({ favorites: favorite });
-			}
+			},
+			getPlanetsData: () => {
+				//get the store
+				const store = getStore();
+				
+				fetch("https://www.swapi.tech/api/planets").then(resp => resp.json())
+				.then(data => {
+					setStore({planets: data.results})
+				})
+
+				.then(console.log)
+
+				.catch(error => {
+					console.log(error);
+				});
+			}, 
+			getPlanetsDetails: (id, setPlanet) => {
+				const store = getStore();
+				
+				fetch(`https://www.swapi.tech/api/planets/${id}`).then(resp => resp.json())
+				.then(data => {
+					setPlanet(data)
+				})
+
+				.catch(error => {
+					console.log(error);
+				});
+			},
+			getVehicleData: () => {
+				//get the store
+				const store = getStore();
+				
+				fetch("https://www.swapi.tech/api/vehicles").then(resp => resp.json())
+				.then(data => {
+					setStore({vehicle: data.results})
+				})
+
+				.then(console.log)
+
+				.catch(error => {
+					console.log(error);
+				});
+			}, 
+			getVehicleDetails: (id, setVehicle) => {
+				const store = getStore();
+				
+				fetch(`https://www.swapi.tech/api/vehicles/${id}`).then(resp => resp.json())
+				.then(data => {
+					setVehicle(data)
+				})
+
+				.catch(error => {
+					console.log(error);
+				});
+			},
 		}
 	};
 };

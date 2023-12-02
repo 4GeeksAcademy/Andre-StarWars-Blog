@@ -6,11 +6,16 @@
 
 body {
     background-image: url("https://cdn.pixabay.com/photo/2021/10/21/20/38/galaxy-6730398_1280.jpg");
-    background-repeat:no-repeat;
+    background-repeat:repeat;
     background-size: cover;
     background-position: center;
     font-family: 'Roboto Slab', serif;
+    padding-top: 100px;
 }
+h5 {
+    font-size: 1rem;
+}
+
 /* Estilo de la barra de desplazamiento */
 ::-webkit-scrollbar {
     margin-top: 10px;
@@ -36,8 +41,15 @@ body {
   }
 .nave {
     background: linear-gradient(180deg, black, black, white,black, transparent);
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    top: 0;
 }
-
+.noPicture{
+    width: 286px;
+    height: 286px;
+}
   
   
   

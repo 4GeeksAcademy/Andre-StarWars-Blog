@@ -1,6 +1,8 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { CharacterCard } from "../component/charac-card.js";
+import { PlanetsCard } from "../component/planets-card.js";
+import { VehicleCard } from "../component/vehicle-card.js";
 
 export const Home = (props) => {
   const { store, actions } = useContext(Context);
@@ -24,6 +26,14 @@ export const Home = (props) => {
   // Efecto para cargar la primera página al montar el componente
   useEffect(() => {
     actions.getPeopleData();
+  }, []);
+
+  useEffect(() => {
+    actions.getPlanetsData();
+  }, []);
+
+  useEffect(() => {
+    actions.getVehicleData();
   }, []);
 
   // Función para generar un color hexadecimal aleatorio
@@ -50,7 +60,7 @@ const handlePageChange0 = () => {
       <div className="container m-3 justify-content-center">
         <div id="characters" className="mt-5 text-center">
           {/* Título que cambia de color */}
-          <h1 style={{ color: titleColor }}>Characters</h1>
+          <h1 style={{ color: titleColor }}>CHARACTERS</h1>
         </div>
         <div className="d-flex h-scrollbar" style={{ overflowX: "auto" }}>
           <div className="d-flex">
@@ -71,6 +81,32 @@ const handlePageChange0 = () => {
         <button onClick={handlePageChange2} className="btn btn-outline-success border-3 m-3">
           Page 4
         </button>
+      </div>
+      <div className="container m-3 justify-content-center">
+        <div id="planets" className="mt-5 text-center">
+          {/* Título que cambia de color */}
+          <h1 style={{ color: titleColor }}>PLANETS</h1>
+        </div>
+        <div className="d-flex h-scrollbar" style={{ overflowX: "auto" }}>
+          <div className="d-flex">
+            {store.planets?.map((planet) => (
+              <PlanetsCard name={planet.name} index={planet.uid} path="planetsDetails" />
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="container m-3 justify-content-center">
+        <div id="vehicles" className="mt-5 text-center">
+          {/* Título que cambia de color */}
+          <h1 style={{ color: titleColor }}>VEHICLES</h1>
+        </div>
+        <div className="d-flex h-scrollbar" style={{ overflowX: "auto" }}>
+          <div className="d-flex">
+            {store.vehicle?.map((vehicle) => (
+              <VehicleCard name={vehicle.name} index={vehicle.uid} path="vehicleDetails" />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
