@@ -44,16 +44,6 @@ export const Home = (props) => {
 const handlePageChange0 = () => {
   actions.getPeopleData();
 };
-  // Manejar el cambio de página
-  const handlePageChange = () => {
-    actions.getPeopleData1();
-  };
-  const handlePageChange1 = () => {
-    actions.getPeopleData2();
-  };
-  const handlePageChange2 = () => {
-    actions.getPeopleData3();
-  };
 
   return (
     <div className="container">
@@ -71,15 +61,6 @@ const handlePageChange0 = () => {
         </div>
         <button onClick={handlePageChange0} className="btn btn-outline-success border-3 m-3">
           Page 1
-        </button>
-        <button onClick={handlePageChange} className="btn btn-outline-success border-3 m-3">
-          Page 2
-        </button>
-        <button onClick={handlePageChange1} className="btn btn-outline-success border-3 m-3">
-          Page 3
-        </button>
-        <button onClick={handlePageChange2} className="btn btn-outline-success border-3 m-3">
-          Page 4
         </button>
       </div>
       <div className="container m-3 justify-content-center">
